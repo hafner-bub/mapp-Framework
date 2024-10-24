@@ -1206,7 +1206,7 @@ _TEST Cut_Paste_Directory(void)
 				
 				case 10:
 					brsmemcpy((UDINT)&pMpFileManagerUIConnect->File.NewName, (UDINT)&NewDirName, sizeof(pMpFileManagerUIConnect->File.NewName));
-					pMpFileManagerUIConnect->File.CreateFolder = 11;
+					pMpFileManagerUIConnect->File.CreateFolder = 1;
 					ArrangeSubState = 11;
 					break;
 							
