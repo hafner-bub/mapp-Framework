@@ -1201,8 +1201,13 @@ _TEST Cut_Paste_Directory(void)
 				case 3:
 					TEST_BUSY_CONDITION(pMpFileManagerUIConnect->Status != mpFILE_UI_STATUS_REFRESH);
 					pMpFileManagerUIConnect->File.Refresh = 0;
-					ArrangeSubState = 10;
+					ArrangeSubState = 4;
 					break;
+				
+				case 4:
+					TEST_BUSY_CONDITION(pMpFileManagerUIConnect->Status != mpFILE_UI_STATUS_IDLE);
+					ArrangeSubState = 10;
+					break;				
 				
 				case 10:
 					brsmemcpy((UDINT)&pMpFileManagerUIConnect->File.NewName, (UDINT)&NewDirName, sizeof(pMpFileManagerUIConnect->File.NewName));
